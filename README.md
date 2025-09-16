@@ -7,10 +7,10 @@ Bienvenu à toi, lecteur ! Ce TP a pour objectif de t'aider à prendre en main G
 Pour pouvoir faire ce TP, il te faudra le logiciel Git installé sur ton ordinateur :
 
 - Si tu es sous Linux ou Mac, git est normalement déjà installé.
-- Si tu es sous Windows, je te conseille d'installer GitBash.
+- Si tu es sous Windaube, je te conseille d'installer Linux (ou WSL ou GitBash si vraiment tu veux rester sur ce faux OS).
 - Node.js installé sur votre machine pour exécuter les exemples JavaScript.
 
-Ce TP va aussi utiliser l'éditeur de code VSCode. Je te conseille de l'utiliser aussi pour plus de clarté mais tu peux utiliser un autre éditeur de code.
+Ce TP va aussi utiliser l'éditeur de code VSCode. Je te conseille de l'utiliser aussi pour plus de clarté mais tu peux utiliser un autre éditeur de code comme WebStorm ou PHPStorm.
 
 Maintenant que les prérequis sont installés, il est temps de se lancer !
 
@@ -39,6 +39,10 @@ git config --global core.editor "code --wait"
 
 Cette commande configure VSCode comme éditeur par défaut.
 
+### Configuration de la clé SSH (si nécessaire)
+
+(à toi de chercher un peu sur la doc de Github, elle est giga bien faite)
+
 ## Partie 1 : Initialisation et Premier Repository
 
 ### Mission 1 : Initialiser un repository
@@ -66,7 +70,7 @@ git add README.md
 Crée ton premier commit :
 
 ```bash
-git commit -m "Initial commit: Add README"
+git commit -m ":tada: Initial commit: Add README"
 ```
 
 Vérifie l'historique des commits :
@@ -105,11 +109,11 @@ git commit -m "Remove useless lines from README"
 
 ### Mission 2 : Ajouter un fichier
 
-Ta deuxième mission est de créer un fichier `solutions.md` à la racine du repo (à côté du README.md) et d'y ajouter la démarche que tu as suivie pour réussir la mission précédente.
+Ta deuxième mission est de créer un fichier `solutions.md` à la racine du repo (à côté du README.md) et d'y ajouter la démarche que tu as suivie pour réussir la mission précédente. (en gros tu retapes les commandes dans le fichier)
 
 **Remarque :** L'extension de fichier `.md` signifie Markdown. Ce format permet de faire un peu de mise en page simple de fichier texte. Tu peux utiliser le raccourci `Ctrl+Shift+V` dans VSCode pour visualiser ce type de fichier.
 
-Une fois le fichier créé, n'oublie pas de créer un commit :
+Une fois le fichier créé, n'oublie pas de créer un commit (ajoute un gitmoji pour que ce soit encore plus cool) :
 
 ```bash
 git add solutions.md
@@ -142,6 +146,8 @@ git checkout feature-emoji
 # git checkout -b feature-emoji
 ```
 
+> Maintenant on doit utiliser la commande `git switch`), essaye de l'utiliser aussi ça pourra être utile :)
+
 Vérifie que cette branche est bien sélectionnée :
 
 ```bash
@@ -172,13 +178,15 @@ git add .
 git commit -m "Add emoji functionality to main.js"
 ```
 
+Si tu fais un `git status`, est-ce que tout te semble ok ? si oui alors passe à la suite. Si non, qu'est-ce qu'il faut retirer ?
+
 ### Mission 3 : Fusionner les branches
 
 Retourne sur la branche principale :
 
 ```bash
 git checkout main
-# ou git checkout master selon le nom de votre branche principale
+# ou git checkout master selon le nom de ta branche principale
 ```
 
 Fusionne ta branche feature :
@@ -187,11 +195,15 @@ Fusionne ta branche feature :
 git merge feature-emoji
 ```
 
+> Là pour rappel du vas fusionner la branche `feature-emoji` dans ta branche `main`, car tu est sur la branche `main` là
+
 Supprime la branche devenue inutile :
 
 ```bash
 git branch -d feature-emoji
 ```
+
+> Si tu mets pas le `-d` ça créé la branche et si tu ajoutes le `-d` ça veut dire 'delete' le branch, logique non ?
 
 ## Partie 4 : Résolution de conflits
 
@@ -230,6 +242,8 @@ Une fois résolu :
 git add .
 git commit -m "Resolve merge conflict"
 ```
+
+> Bon là c'est facile car tu as une seule ligne, sur des projets plus gros ce sera peut-être des fois des dixaines de lignes. Git est assez intélligent pour en regler automatiquement certaines mais sinon ce sera à toi de le faire à chaque fois :(
 
 ## Partie 5 : Historique et Navigation
 
@@ -289,30 +303,68 @@ git push -u origin main
 git pull origin main
 ```
 
-## Commandes Git essentielles - Récapitulatif
-
-| Commande | Description |
-|----------|-------------|
-| `git init` | Initialise un nouveau repository |
-| `git status` | Affiche l'état du repository |
-| `git add <fichier>` | Ajoute un fichier à l'index |
-| `git add .` | Ajoute tous les fichiers modifiés |
-| `git commit -m "message"` | Crée un commit avec un message |
-| `git log` | Affiche l'historique des commits |
-| `git branch` | Liste les branches |
-| `git checkout <branche>` | Change de branche |
-| `git checkout -b <branche>` | Crée et change de branche |
-| `git merge <branche>` | Fusionne une branche |
-| `git pull` | Récupère les modifications distantes |
-| `git push` | Envoie les modifications locales |
-
 ## Conclusion
 
-Ça y est, c'est la fin de ce TP ! Bien sûr, il n'a abordé qu'une faible partie de toute la puissance de Git, mais j'espère qu'il t'a donné les clés pour bien commencer avec Git.
+Bien sûr, on n'a abordé qu'une petite partie de Git, mais ce que tu viens de voir c'est vraiment la base !
 
-Dernier conseil : Git réserve parfois quelques situations un peu complexes, notamment lorsque des conflits se créent entre deux modifications. Il faut alors les résoudre à la main (heureusement VSCode aide en affichant les conflits). Mais surtout pas de panique ! Comme dans beaucoup de messages d'erreur, Git donne la démarche à suivre pour résoudre l'erreur dans le message d'erreur. Il faut donc bien faire attention à ce que Git te communique !
+Dernier conseil : Git réserve parfois quelques situations un peu complexes, notamment lorsque des conflits se créent entre deux modifications. Il faut alors les résoudre à la main (heureusement VSCode aide en affichant les conflits). Et pense à bien regarder ce que Git te donne comme infos, en général la démarche à suivre pour résoudre l'erreur est dans le message d'erreur. 
 
-Sur ce, j'espère que tu as apprécié ce TP. Bonne utilisation de Git !
+## Partie 7 : Défis avancés (pour les plus téméraires)
+
+### Défi 1 : Workflow collaboratif complet
+
+Tu vas simuler un workflow de développement en équipe en ajoutant plusieurs features au convertisseur emoji :
+
+1. **Feature A** - Interface web : Crée une branche `feature/web-ui` et développe :
+   - Un fichier `web/index.html` avec une zone de texte et affichage en temps réel
+   - Un fichier `web/style.css` pour styliser l'interface
+   - Un fichier `web/app.js` qui utilise le convertisseur emoji
+
+2. **Feature B** - Nouvelles catégories : Crée une branche `feature/categories` et ajoute :
+   - Une fonction `addAnimalEmojis()` qui ajoute des emojis d'animaux
+   - Une fonction `addFoodEmojis()` qui ajoute des emojis de nourriture
+   - Une fonction `addWeatherEmojis()` qui ajoute des emojis météo
+
+3. Simule des commits réguliers sur les deux branches (au moins 3 commits par branche)
+4. Fais un rebase de `feature/web-ui` sur master
+5. Merge `feature/categories` dans master
+6. Résous les conflits potentiels entre les deux features
+7. Utilise `git log --graph --oneline --all` pour visualiser ton travail
+
+### Défi 2 : Features d'amélioration du convertisseur
+
+Ajoute des fonctionnalités avancées au convertisseur :
+
+1. **Synonymes** : Ajoute un système de synonymes pour reconnaître plus de mots (ex: "content" → "coeur")
+2. **Expressions** : Détecte des expressions comme "je t'aime" → "💕"
+3. **Emojis composés** : Combine plusieurs emojis pour certaines phrases
+4. **Mode aléatoire** : Choisi aléatoirement parmi plusieurs emojis pour un même mot
+
+### Défi 3 : Optimisation et tests
+
+Améliore la qualité du code :
+
+1. **Tests unitaires** : Crée un fichier `test/emoji-test.js` avec des tests pour chaque fonction
+2. **Validation d'entrée** : Ajoute une validation pour s'assurer que les emojis sont valides
+3. **Performance** : Optimise la conversion pour de très longs textes (livres entiers)
+4. **Documentation** : Ajoute de la JSDoc à toutes les fonctions avec exemples d'usage
+
+### Défi 4 : CLI et configuration
+
+Transforme le script en outil en ligne de commande :
+
+1. **Arguments CLI** : Utilise `process.argv` pour accepter du texte directement
+2. **Fichier de config** : Crée un système de configuration via fichier `emoji-config.json`
+3. **Mode interactif** : Ajoute un mode interactif pour saisir du texte en temps réel
+4. **Help et version** : Implémente `--help` et `--version` avec exemples d'usage
+
+### Défi 5 : Intégration et déploiement
+
+Configure l'automatisation :
+
+1. **Scripts npm** : Ajoute des scripts dans `package.json` pour test, convert, interactive
+2. **Hooks pre-commit** : Configure un hook qui vérifie la syntaxe et lance les tests
+3. **CI/CD simulation** : Crée un script `deploy.sh` qui simule le déploiement du convertisseur
+4. **Versioning** : Utilise les tags Git pour versionner ton outil emoji
 
 ---
-*Créé par Baptiste VASSEUR*

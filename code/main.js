@@ -8,6 +8,9 @@ const wordToEmoji = {
     'chien': '🐶',
     'soleil': '☀️',
     'lune': '🌙',
+    'eau': '💧',
+    'feu': '🔥',
+    'terre': '🌍',
     // Ajoute tes propres emojis ici !
 };
 
@@ -23,10 +26,16 @@ function convertTextToEmoji(text) {
     return result;
 }
 
-// Exemple d'utilisation
-const inputText = "J'ai du coeur et j'aime mon chat. Le soleil brille et la lune est belle !";
-console.log("Texte original :", inputText);
-console.log("Texte avec emojis :", convertTextToEmoji(inputText));
+// Exemple d'utilisation - Histoire d'aventure
+const storyText = `Il était une fois un aventurier qui aimait son chien fidèle. 
+Sous le soleil brillant, ils exploraient des terres mystérieuses. 
+Quand la lune se levait, ils allumaient un feu près de l'eau cristalline. 
+Son coeur était rempli d'amour pour cette terre sauvage.`;
+
+console.log("=== Histoire originale ===");
+console.log(storyText);
+console.log("\n=== Histoire avec emojis ===");
+console.log(convertTextToEmoji(storyText));
 
 // Fonction interactive pour tester
 function testEmoji() {
