@@ -1,0 +1,15 @@
+{
+  "name": "tp-git-javascript",
+  "version": "1.0.0",
+  "description": "TP d'apprentissage de Git avec JavaScript",
+  "main": "code/main.js",
+  "scripts": {
+    "start": "node code/main.js",
+    "test": "node code/test.js"
+  },
+  "keywords": ["git", "javascript", "tp", "formation"],
+  "author": "Baptiste VASSEUR",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
