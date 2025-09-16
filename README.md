@@ -87,11 +87,9 @@ Dans un repo git, l'édition des fichiers se fait comme dans un dossier classiqu
 
 Voici ci-dessous une ligne moche et inutile. Sauras-tu la supprimer ?
 
-**Cette ligne est moche et inutile, supprime-la !**
 
 Il existe aussi un module git intégré à VSCode, je t'encourage à essayer de l'utiliser pour supprimer la deuxième ligne moche et inutile ci-dessous.
 
-**Cette ligne est aussi moche et inutile, supprime-la !**
 
 Pour vérifier tes modifications :
 
