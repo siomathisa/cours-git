@@ -11,6 +11,7 @@ const wordToEmoji = {
     'eau': '💧',
     'feu': '🔥',
     'terre': '🌍',
+    'soleil': '☀️',
     // Ajoute tes propres emojis ici !
 };
 
